@@ -1,0 +1,74 @@
+<div class="app">
+	<header class="hero">
+		<p class="kicker">CodePen Challenge</p>
+		<h1>Min. Preferred. Max.</h1>
+		<p class="lead">
+			A clean interactive demo of how <code>clamp(min, preferred, max)</code>
+			chooses a value for responsive typography.
+		</p>
+	</header>
+
+	<section class="layout">
+		<aside class="controls">
+			<label class="control">
+				<span>Minimum</span>
+				<input id="minInput" type="range" min="12" max="40" value="16" />
+				<strong id="minValue">16px</strong>
+			</label>
+
+			<label class="control">
+				<span>Preferred</span>
+				<input id="preferredInput" type="range" min="1" max="10" value="4" />
+				<strong id="preferredValue">4vw</strong>
+			</label>
+
+			<label class="control">
+				<span>Maximum</span>
+				<input id="maxInput" type="range" min="24" max="96" value="56" />
+				<strong id="maxValue">56px</strong>
+			</label>
+
+			<label class="control">
+				<span>Viewport width</span>
+				<input id="viewportInput" type="range" min="320" max="1440" value="900" />
+				<strong id="viewportValue">900px</strong>
+			</label>
+		</aside>
+
+		<main class="preview">
+			<div class="preview-head">
+				<p class="preview-label">Live preview</p>
+				<p id="stateText" class="state-text">Preferred value is active</p>
+			</div>
+
+			<div class="viewport-frame">
+				<div id="viewportBox" class="viewport-box">
+					<p id="demoText" class="demo-text">Fluid type. Fixed limits.</p>
+
+					<div class="meter">
+						<div id="minMarker" class="marker marker-min">Min</div>
+						<div id="preferredMarker" class="marker marker-preferred">Preferred</div>
+						<div id="maxMarker" class="marker marker-max">Max</div>
+						<div id="resultMarker" class="marker marker-result">Result</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</section>
+
+	<section class="footer-panels">
+		<div class="panel">
+			<p class="panel-label">Generated CSS</p>
+			<pre id="codeOutput">font-size: clamp(16px, 4vw, 56px);</pre>
+			<button id="copyButton" type="button">Copy CSS</button>
+		</div>
+
+		<div class="panel">
+			<p class="panel-label">Explanation</p>
+			<p id="explanation" class="explanation">
+				The preferred value sits between the minimum and maximum, so it is used directly.
+			</p>
+			<p id="resultText" class="result-text">Calculated size: 36px</p>
+		</div>
+	</section>
+</div>
